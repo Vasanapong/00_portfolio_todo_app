@@ -1,0 +1,108 @@
+.edit-task{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 90vh;
+    margin: 20px;
+    border-radius: 5px;
+    color: rgb(225, 225, 225);
+}
+
+.edit-task__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80px;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.edit-task__icon{
+    position: absolute;
+    left: 0px;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-task__icon > span{
+    position: relative;
+    bottom: 2px;
+    font-size: 1.1rem;
+    margin-left: 5px;
+    display: none;
+}
+
+.edit-task__icon:hover{
+    color:  rgb(30, 30, 30);
+    background-color: rgb(220, 220, 220);
+}
+
+.edit-task__form{
+    padding: 10px 0px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-task__form > div{
+    margin-bottom: 10px;
+}
+
+.edit-task__form > div > input{
+    margin-top: 10px;
+    width: 100%;
+    background-color: rgb(50, 50, 50);
+    border: none;
+    outline: none;
+    color: rgb(225, 225, 225);
+    padding: 20px;
+}
+
+.edit-task__form > div > textarea{
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(50, 50, 50);
+    border: none;
+    outline: none;
+    color: rgb(225, 225, 225);
+    padding: 20px;
+    resize: none;
+}
+
+.edit-task__form-submit-button{
+    border: none;
+    background: none;
+    color: rgb(100, 100, 100);
+    border: 1px solid rgb(100, 100, 100);
+    padding: 10px 20px;
+    cursor:pointer;
+}
+
+.edit-task__form-submit-button-active{
+    border: none;
+    background: none;
+    border: 1px solid rgb(220, 220, 220);
+    padding: 10px 20px;
+    cursor:pointer;
+    color: rgb(220, 220, 220);
+}
+
+@media screen and (min-width:768px) {
+    .edit-task__icon{
+        padding: 10px 20px;
+    }
+    .edit-task__icon > span{
+        display: block;
+    }
+}
