@@ -1,7 +1,7 @@
 import './ViewTask.css'
 import { IoMdSkipBackward } from 'react-icons/io';
 import { AiOutlineEdit,AiOutlineDelete } from 'react-icons/ai';
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 import { todoContext } from '../App';
 
 const ViewTask = () =>{
@@ -18,6 +18,10 @@ const ViewTask = () =>{
             })
         )
     }
+
+    useEffect(() => {
+        localStorage.setItem('allTaskLocal',JSON.stringify(allTask))
+    }, [allTask]);
 
     return(
         <div className="view-task">

@@ -8,7 +8,11 @@ const todoContext = createContext()
 
 function App() {
 
-  const [allTask, setAllTask] = useState([])
+  const [allTask, setAllTask] = useState(()=>{
+    let initialValue = localStorage.getItem('allTaskLocal')
+    initialValue = JSON.parse(initialValue)
+    return initialValue || [];
+  })
   const [currentEdit, setCurrentEdit] = useState('')
   const [taskViewComponent, setTaskViewComponent] = useState('add')
 

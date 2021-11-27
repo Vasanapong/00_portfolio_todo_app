@@ -9,13 +9,13 @@ const AddTask = () =>{
     const [todoData, setTodoData] = useState(defaultTodo)
     const [checkNoteData, setCheckNoteData] = useState(false)
     const [checkAddData, setCheckAddData] = useState(false) 
-    const { setTaskViewComponent,setAllTask } = useContext(todoContext)
+    const { setTaskViewComponent,setAllTask,allTask } = useContext(todoContext)
 
     const handleSubmit = (e) =>{
         e.preventDefault();
         if(checkNoteData){
             todoData.taskId = Date.now().toString()
-            setAllTask(prev=>[todoData,...prev])
+            setAllTask((prev)=>[todoData,...prev])
             setTodoData(defaultTodo)
             setCheckAddData(true)
             setCheckNoteData(false)
@@ -23,12 +23,13 @@ const AddTask = () =>{
     }
 
     useEffect(() => {
+        localStorage.setItem('allTaskLocal',JSON.stringify(allTask))
         if(todoData.taskName.length > 0 && todoData.taskTime.length > 0 && todoData.taskNote.length > 0){
             setCheckNoteData(true)
         }else{
             setCheckNoteData(false)
         }
-    },[todoData])
+    },[todoData,allTask])
 
     return(
         <div className="add-task" onSubmit={(e)=>handleSubmit(e)}>

@@ -26,12 +26,13 @@ const EditTask = () =>{
     }
 
     useEffect(() => {
+        localStorage.setItem('allTaskLocal',JSON.stringify(allTask))
         if(editData.taskName.length > 0 && editData.taskTime.length > 0 && editData.taskNote.length > 0){
             setCheckNoteData(true)
         }else{
             setCheckNoteData(false)
         }
-    },[editData])
+    },[editData,allTask])
 
     return(
         <div className="edit-task">
